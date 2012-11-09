@@ -16,5 +16,7 @@ namespace Avisos.Models
         public DateTime Publish { get; set; }
 
         public DateTime Created { get; set; }
+
+        public DateTime Deletethis { get; set; }
     }
 }
