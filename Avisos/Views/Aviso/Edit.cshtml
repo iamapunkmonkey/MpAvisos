@@ -1,0 +1,54 @@
+﻿@model Avisos.Models.Aviso
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Aviso</legend>
+
+        @Html.HiddenFor(model => model.AvisoID)
+        @Html.HiddenFor(model => model.Publish)
+        @Html.HiddenFor(model => model.Created)
+
+        <p>
+            This will only effect the Avisos that appear on
+            MiPaque.org.  You will need to <br />
+            <a>Resend</a> the Aviso to send as a text
+             message again.
+        </p>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+        <div class="editor-label">
+            <label for="SendSMS">Resend SMS</label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SendSMS)
+            @Html.ValidationMessageFor(model => model.SendSMS)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

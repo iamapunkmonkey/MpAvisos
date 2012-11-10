@@ -1,0 +1,92 @@
+﻿@model Avisos.Models.CreatePageAvisos
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+    <aside>
+        <h4>Past Avisos</h4>
+            <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Avisos.First().Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avisos.First().Publish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avisos.First().Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avisos.First().SendSMS)
+            </th>
+        </tr>
+
+    @foreach (var item in Model.Avisos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SendSMS)
+            </td>
+        </tr>
+    }
+
+    </table>
+</aside>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Aviso</legend>
+
+        @Html.HiddenFor(model => model.Aviso.Publish)
+        @Html.HiddenFor(model => model.Aviso.Created)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Aviso.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Aviso.Text)
+            @Html.ValidationMessageFor(model => model.Aviso.Text)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Aviso.Type)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Aviso.Type, Model.Aviso.AvisoTypeSelectList)
+            @Html.ValidationMessageFor(model => model.Aviso.Type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Aviso.SendSMS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Aviso.SendSMS)
+            @Html.ValidationMessageFor(model => model.Aviso.SendSMS)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
