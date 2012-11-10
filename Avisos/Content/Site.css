@@ -311,7 +311,7 @@ article {
 
 aside {
     float: right;
-    width: 25%;
+    width: 60%;
 }
 
     aside ul {
@@ -424,7 +424,7 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
+input, textarea, select {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;

@@ -1,0 +1,43 @@
+﻿@model Avisos.Models.Aviso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Aviso</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Publish)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Publish)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Created)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Created)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SendSMS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SendSMS)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AvisoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

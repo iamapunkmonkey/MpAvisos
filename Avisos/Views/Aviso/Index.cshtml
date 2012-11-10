@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Avisos.Models.Aviso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th title="Tells if SMS was sent with the last save.">
+            SMS sent
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Publish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendSMS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvisoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvisoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvisoID })
+        </td>
+    </tr>
+}
+
+</table>
