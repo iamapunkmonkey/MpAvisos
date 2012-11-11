@@ -191,7 +191,7 @@
     <Compile Include="Models\AvisoType.cs" />
     <Compile Include="Models\CreatePageAvisos.cs" />
     <Compile Include="Models\HomePageAvisos.cs" />
-    <Compile Include="Models\Repos\AvisoRepository.cs" />
+    <Compile Include="Controllers\Repos\AvisoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
