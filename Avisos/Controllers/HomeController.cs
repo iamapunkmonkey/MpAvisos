@@ -15,7 +15,7 @@ namespace Avisos.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Aviso Dashboard";
             var avisos = db.Avisos.ToList();
             HomePageAvisos model = new HomePageAvisos(){Avisos = avisos };
             return View("Index", model);

@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Avisos.Models.Aviso>
+@using Avisos.Helpers
 
 @{
     ViewBag.Title = "Index";
 }
+
 
 <h2>Index</h2>
 
@@ -11,6 +13,9 @@
 </p>
 <table>
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Text)
         </th>
@@ -28,6 +33,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Text)
         </td>

@@ -41,7 +41,8 @@ namespace Avisos.Controllers
         public ActionResult Create()
         {
             var avisos = db.Avisos.ToList();
-            CreatePageAvisos model = new CreatePageAvisos(){Avisos = avisos, Aviso = new Aviso() };
+            Aviso aviso = new Aviso() { Created = DateTime.Now, Publish = DateTime.Now };
+            CreatePageAvisos model = new CreatePageAvisos() { Avisos = avisos, Aviso = aviso};
             return View(model);
         }
 

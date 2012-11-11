@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,9 +8,18 @@ namespace Avisos.Models
 {
     public enum AvisoType
     {
-        Weather = 1,
-        Construction = 2,
-        Meetings = 3,
-        Events = 4
+        [Display(Name = "User name")]
+        Deadline = 0,
+
+        [Display(Name = "User name")]
+        Construction = 1,
+
+        [Display(Name = "User name")]   
+        Meeting = 2,
+
+        [Display(Name = "User name")]
+        Event = 3,
     }
+
+
 }

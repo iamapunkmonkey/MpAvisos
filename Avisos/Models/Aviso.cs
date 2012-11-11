@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Spatial;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 
@@ -28,10 +32,16 @@ namespace Avisos.Models
 
         public string Text { get; set; }
 
+        public DbGeography Location { get; set; }
+
         public DateTime Publish { get; set; }
 
         public DateTime Created { get; set; }
 
         public bool SendSMS { get; set; }
+
+
+
+        
     }
 }

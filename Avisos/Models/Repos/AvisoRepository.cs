@@ -48,5 +48,15 @@ namespace Avisos.Models.Repos
         {
             return Context.Avisos.Where(r => r.Type == type);
         }
+
+        public object GetService(Type serviceType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<object> GetServices(Type serviceType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
