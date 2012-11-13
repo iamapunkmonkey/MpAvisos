@@ -32,7 +32,7 @@ namespace Avisos.Models
 
         public string Text { get; set; }
 
-        public DbGeography Location { get; set; }
+        //public DbGeography Location { get; set; }
 
         public DateTime Publish { get; set; }
 
@@ -40,7 +40,7 @@ namespace Avisos.Models
 
         public bool SendSMS { get; set; }
 
-        //public bool Nothing { get; set; }
+        public bool Nothing { get; set; }
 
 
 
