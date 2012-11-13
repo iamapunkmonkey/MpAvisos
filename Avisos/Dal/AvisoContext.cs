@@ -25,7 +25,7 @@ namespace Avisos.Dal
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AvisoContext, Configuration>());
+           //Database.SetInitializer(new MigrateDatabaseToLatestVersion<AvisoContext, Configuration>());
         }
 
     }

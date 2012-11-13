@@ -32,7 +32,7 @@ namespace Avisos.Models
 
         public string Text { get; set; }
 
-        //public DbGeography Location { get; set; }
+        public DbGeography Location { get; set; }
 
         public DateTime Publish { get; set; }
 
