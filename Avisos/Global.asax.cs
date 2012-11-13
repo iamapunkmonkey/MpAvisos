@@ -17,7 +17,7 @@ namespace Avisos
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new Avisos.Dal.AvisoContext.AvisoContextInitializer());
+            //Database.SetInitializer(new Avisos.Dal.AvisoContext.AvisoContextInitializer());
 
             AreaRegistration.RegisterAllAreas();
 
