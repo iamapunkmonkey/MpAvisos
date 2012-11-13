@@ -22,5 +22,11 @@ namespace Avisos.Dal
                 // Use the context to seed the db.
             }
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AvisoContext, Configuration>());
+        }
+
     }
 }
