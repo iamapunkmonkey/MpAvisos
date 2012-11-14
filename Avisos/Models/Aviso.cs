@@ -22,9 +22,7 @@ namespace Avisos.Models
             });
         }
 
-
         public IEnumerable<SelectListItem> AvisoTypeSelectList { get; set; }
-
 
         public int AvisoID { get; set; }
 
