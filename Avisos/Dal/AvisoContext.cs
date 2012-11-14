@@ -15,17 +15,17 @@ namespace Avisos.Dal
             Configuration.ProxyCreationEnabled = false;
         }
 
-        //public class AvisoContextInitializer : DropCreateDatabaseIfModelChanges<AvisoContext>
-        //{
-        //    protected override void Seed(AvisoContext context)
-        //    {
-        //        // Use the context to seed the db.
-        //    }
-        //}
+        public class AvisoContextInitializer : CreateDatabaseIfNotExists<AvisoContext>
+        {
+            protected override void Seed(AvisoContext context)
+            {
+                // Use the context to seed the db.
+            }
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AvisoContext, Configuration>());
+            
         }
 
     }
