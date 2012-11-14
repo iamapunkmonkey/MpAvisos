@@ -125,3 +125,4 @@ C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\DotNetOpenAu
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.dll
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.pdb
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.csprojResolveAssemblyReference.cache
