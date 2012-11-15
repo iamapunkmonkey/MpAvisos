@@ -11,7 +11,7 @@ namespace Avisos.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("AvisoContext")
         {
         }
 
