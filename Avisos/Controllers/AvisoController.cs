@@ -12,14 +12,14 @@ namespace Avisos.Controllers
 {
     public class AvisoController : Controller
     {
-        private AvisoContext db = new AvisoContext();
 
+        private UnitOfWork unitOfWork = new UnitOfWork();
         //
         // GET: /Aviso/
 
         public ActionResult Index()
         {
-            return View(db.Avisos.ToList());
+            return View(unitOfWork.AvisoRepository.GetAll().ToList());
         }
 
         //
@@ -27,7 +27,7 @@ namespace Avisos.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Aviso aviso = db.Avisos.Find(id);
+            Aviso aviso = unitOfWork.AvisoRepository.Get(id);
             if (aviso == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace Avisos.Controllers
 
         public ActionResult Create()
         {
-            var avisos = db.Avisos.ToList();
+            var avisos = unitOfWork.AvisoRepository.GetAll().ToList();
             Aviso aviso = new Aviso() { Created = DateTime.Now, Publish = DateTime.Now };
             CreatePageAvisos model = new CreatePageAvisos() { Avisos = avisos, Aviso = aviso};
             return View(model);
@@ -54,8 +54,8 @@ namespace Avisos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Avisos.Add(aviso);
-                db.SaveChanges();
+                unitOfWork.AvisoRepository.Add(aviso);
+                unitOfWork.Save();
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +67,7 @@ namespace Avisos.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Aviso aviso = db.Avisos.Find(id);
+            Aviso aviso = unitOfWork.AvisoRepository.Get(id);
             if (aviso == null)
             {
                 return HttpNotFound();
@@ -84,8 +84,7 @@ namespace Avisos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(aviso).State = EntityState.Modified;
-                db.SaveChanges();
+                unitOfWork.AvisoRepository.Update(aviso);
                 return RedirectToAction("Index");
             }
             return View(aviso);
@@ -96,7 +95,7 @@ namespace Avisos.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Aviso aviso = db.Avisos.Find(id);
+            Aviso aviso = unitOfWork.AvisoRepository.Get(id);
             if (aviso == null)
             {
                 return HttpNotFound();
@@ -110,15 +109,14 @@ namespace Avisos.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Aviso aviso = db.Avisos.Find(id);
-            db.Avisos.Remove(aviso);
-            db.SaveChanges();
+            unitOfWork.AvisoRepository.Delete(id);
+            unitOfWork.Save();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            unitOfWork.Dispose();
             base.Dispose(disposing);
         }
     }

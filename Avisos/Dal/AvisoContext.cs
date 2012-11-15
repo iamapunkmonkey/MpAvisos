@@ -10,23 +10,25 @@ namespace Avisos.Dal
     public class AvisoContext : DbContext
     {
         public DbSet<Aviso> Avisos { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
         public AvisoContext()
         {
             Configuration.ProxyCreationEnabled = false;
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-
-        public class AvisoContextInitializer : DropCreateDatabaseIfModelChanges<AvisoContext>
+        public class AvisoContextInitializer : CreateDatabaseIfNotExists<AvisoContext>
         {
             protected override void Seed(AvisoContext context)
             {
                 // Use the context to seed the db.
-                base.Seed(context);
             }
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            
+        }
+
     }
 }

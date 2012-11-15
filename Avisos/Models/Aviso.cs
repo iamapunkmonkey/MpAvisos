@@ -22,9 +22,7 @@ namespace Avisos.Models
             });
         }
 
-
         public IEnumerable<SelectListItem> AvisoTypeSelectList { get; set; }
-
 
         public int AvisoID { get; set; }
 
@@ -40,10 +38,7 @@ namespace Avisos.Models
 
         public bool SendSMS { get; set; }
 
-        public bool Nothing { get; set; }
-
-
-
-        
+        //public bool Nothing { get; set; }
+ 
     }
 }

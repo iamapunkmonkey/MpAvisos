@@ -37,25 +37,24 @@ namespace Avisos.Areas.API.Controllers
             return aviso;
         }
 
-        
 
-        //// POST api/Avisos
-        //public HttpResponseMessage PostAviso(Aviso aviso)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Avisos.Add(aviso);
-        //        db.SaveChanges();
 
-        //        HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, aviso);
-        //        response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = aviso.AvisoID }));
-        //        return response;
-        //    }
-        //    else
-        //    {
-        //        return Request.CreateResponse(HttpStatusCode.BadRequest);
-        //    }
-        //}
+        // POST api/Avisos
+        public HttpResponseMessage PostAviso(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.AvisoRepository.AddContact(contact);
+
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, contact);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = contact.ContactID}));
+                return response;
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
 
         protected override void Dispose(bool disposing)
         {

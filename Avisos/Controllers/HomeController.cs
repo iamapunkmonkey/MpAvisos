@@ -11,12 +11,12 @@ namespace Avisos.Controllers
     public class HomeController : Controller
     {
 
-        private AvisoContext db = new AvisoContext();
+        //private AvisoContext db = new AvisoContext();
 
         public ActionResult Index()
         {
             ViewBag.Message = "Aviso Dashboard";
-            var avisos = db.Avisos.ToList();
+            var avisos = new List<Aviso>(); //var avisos = db.Avisos.ToList();
             HomePageAvisos model = new HomePageAvisos(){Avisos = avisos };
             return View("Index", model);
         }
