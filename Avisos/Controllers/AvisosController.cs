@@ -44,10 +44,10 @@ namespace Avisos.Areas.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.AvisoRepository.AddContact(contact);
+                Contact con = unitOfWork.AvisoRepository.AddContact(new Contact() { Phone = contact.Phone });
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, contact);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = contact.ContactID}));
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, con);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = con.ContactID }));
                 return response;
             }
             else
