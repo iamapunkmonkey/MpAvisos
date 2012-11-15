@@ -204,4 +204,3 @@ C:\Users\kbo\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\kbo\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\kbo\MpAvisos\Avisos\obj\Debug\Avisos.dll
 C:\Users\kbo\MpAvisos\Avisos\obj\Debug\Avisos.pdb
-C:\Users\kbo\MpAvisos\Avisos\obj\Debug\Avisos.csprojResolveAssemblyReference.cache
