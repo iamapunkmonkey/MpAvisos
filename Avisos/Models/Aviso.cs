@@ -38,10 +38,7 @@ namespace Avisos.Models
 
         public bool SendSMS { get; set; }
 
-        public bool Nothing { get; set; }
-
-
-
-        
+        //public bool Nothing { get; set; }
+ 
     }
 }

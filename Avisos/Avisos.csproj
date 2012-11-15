@@ -198,6 +198,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Aviso.cs" />
     <Compile Include="Models\AvisoType.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\CreatePageAvisos.cs" />
     <Compile Include="Models\HomePageAvisos.cs" />
     <Compile Include="Controllers\Repos\AvisoRepository.cs" />

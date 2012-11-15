@@ -10,6 +10,8 @@ namespace Avisos.Dal
     public class AvisoContext : DbContext
     {
         public DbSet<Aviso> Avisos { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
         public AvisoContext()
         {
             Configuration.ProxyCreationEnabled = false;

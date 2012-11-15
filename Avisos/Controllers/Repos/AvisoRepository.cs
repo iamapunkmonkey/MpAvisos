@@ -49,6 +49,18 @@ namespace Avisos.Models.Repos
             return Context.Avisos.Where(r => r.Type == type);
         }
 
+        public Contact AddContact(Contact contact)
+        {
+            Context.Contacts.Add(contact);
+            Context.SaveChanges();
+            return contact;
+        }
+
+        public IEnumerable<Contact> GetAllContacts()
+        {
+            return Context.Contacts;
+        }
+
         public object GetService(Type serviceType)
         {
             throw new NotImplementedException();
@@ -58,5 +70,6 @@ namespace Avisos.Models.Repos
         {
             throw new NotImplementedException();
         }
+
     }
 }
