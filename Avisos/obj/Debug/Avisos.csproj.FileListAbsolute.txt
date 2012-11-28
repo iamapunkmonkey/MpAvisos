@@ -204,3 +204,14 @@ C:\Users\kbo\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\kbo\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\kbo\MpAvisos\Avisos\obj\Debug\Avisos.dll
 C:\Users\kbo\MpAvisos\Avisos\obj\Debug\Avisos.pdb
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\RestSharp.dll
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Api.dll
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.dll
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.dll
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\RestSharp.xml
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Api.pdb
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Api.xml
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.pdb
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.xml
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.pdb
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.xml

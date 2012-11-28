@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Avisos.Models;
 using Avisos.Dal;
+using Twilio;
 
 namespace Avisos.Controllers
 {
@@ -56,6 +57,15 @@ namespace Avisos.Controllers
             {
                 unitOfWork.AvisoRepository.Add(aviso);
                 unitOfWork.Save();
+
+                var twilio = new TwilioRestClient("AC8f7b487b784a61eb3f7e0441cf64c664", "be52390895ffefb6ad26ad94a40f9d85");
+                //var items = unitOfWork.AvisoRepository.GetAllContacts().Take(5);
+                int items = 1;
+                for (int i = 0; i < items; i++ )
+                {
+                    var msg = twilio.SendSmsMessage("+15551112222", "+19892252755", "Can you believe it's this easy to send an SMS?!");
+
+                }
                 return RedirectToAction("Index");
             }
 
