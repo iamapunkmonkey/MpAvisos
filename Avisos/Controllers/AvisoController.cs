@@ -60,11 +60,13 @@ namespace Avisos.Controllers
 
                 var twilio = new TwilioRestClient("AC8f7b487b784a61eb3f7e0441cf64c664", "be52390895ffefb6ad26ad94a40f9d85");
                 //var items = unitOfWork.AvisoRepository.GetAllContacts().Take(5);
+
+                //TODO: trim to 140
+                //TODO: handle a whole bunch
                 int items = 1;
                 for (int i = 0; i < items; i++ )
                 {
-                    var msg = twilio.SendSmsMessage("+15551112222", "+19892252755", "Can you believe it's this easy to send an SMS?!");
-
+                    var msg = twilio.SendSmsMessage("+17732426982", "+19892252755", aviso.Text);
                 }
                 return RedirectToAction("Index");
             }

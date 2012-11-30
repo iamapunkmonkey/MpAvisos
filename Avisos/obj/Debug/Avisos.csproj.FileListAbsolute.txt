@@ -125,7 +125,6 @@ C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\DotNetOpenAu
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.dll
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.pdb
-C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.csprojResolveAssemblyReference.cache
 C:\Users\kbo\MpAvisos\Avisos\bin\Avisos.dll
 C:\Users\kbo\MpAvisos\Avisos\bin\Avisos.pdb
 C:\Users\kbo\MpAvisos\Avisos\bin\x86\sqlcese40.dll
@@ -215,3 +214,4 @@ C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.p
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.xml
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.pdb
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.xml
+C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.csprojResolveAssemblyReference.cache
