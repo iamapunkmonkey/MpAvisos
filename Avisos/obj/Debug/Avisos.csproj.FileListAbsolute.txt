@@ -214,4 +214,3 @@ C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.p
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Mvc.xml
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.pdb
 C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\bin\Twilio.Twiml.xml
-C:\Users\kevbol\Documents\GitHub\Repos\MiParque\MpAvisos\Avisos\obj\Debug\Avisos.csprojResolveAssemblyReference.cache

@@ -28,6 +28,8 @@ namespace Avisos.Models
 
         public AvisoType Type { get; set; }
 
+        [Required]
+        [StringLength(140, ErrorMessage = "Text is required and must be less than 140 chracters")]
         public string Text { get; set; }
 
         public DbGeography Location { get; set; }
