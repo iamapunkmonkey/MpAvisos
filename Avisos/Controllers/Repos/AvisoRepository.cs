@@ -23,10 +23,17 @@ namespace Avisos.Models.Repos
         {
             return Context.Avisos.SingleOrDefault(r => r.AvisoID == id);
         }
+
         public IQueryable<Aviso> GetAll()
         {
-            return Context.Avisos;
+            return Context.Avisos.OrderByDescending(x => x.Created);
         }
+
+        public IQueryable<Aviso> GetTop15()
+        {
+            return Context.Avisos.OrderByDescending(x => x.Created).Take(15);
+        }
+
         public Aviso Add(Aviso aviso)
         {
             Context.Avisos.Add(aviso);

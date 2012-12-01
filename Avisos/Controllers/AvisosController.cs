@@ -11,6 +11,7 @@ using System.Web.Http;
 using Avisos.Models;
 using Avisos.Dal;
 using Avisos.Models.Abstract;
+using Twilio;
 
 namespace Avisos.Areas.API.Controllers
 {
@@ -22,7 +23,7 @@ namespace Avisos.Areas.API.Controllers
         // GET api/Avisos
         public IEnumerable<Aviso> GetAvisoes()
         {
-            return unitOfWork.AvisoRepository.GetAll().AsEnumerable();
+            return unitOfWork.AvisoRepository.GetTop15().AsEnumerable();
         }
 
         // GET api/Avisos/5
@@ -44,16 +45,36 @@ namespace Avisos.Areas.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                Contact con = unitOfWork.AvisoRepository.AddContact(new Contact() { Phone = contact.Phone });
+                var phones = unitOfWork.AvisoRepository.GetAllContacts().Select(c => c.Phone).Distinct();
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, con);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = con.ContactID }));
-                return response;
+                if (!phones.Contains(contact.Phone))
+                {
+                    Contact con = unitOfWork.AvisoRepository.AddContact(new Contact() { Phone = contact.Phone });
+                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, con);
+                    response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = con.ContactID }));
+                    SendWelcomeSMS(con);
+                    return response;
+                }
+                else
+                {
+                    //Fail 409
+                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Conflict, 0);
+                    response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = 0 }));
+                    return response;
+                }
+
             }
             else
             {
+                //Fail 400
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
+        }
+
+        private void SendWelcomeSMS(Contact contact)
+        {
+            var twilio = new TwilioRestClient("AC8f7b487b784a61eb3f7e0441cf64c664", "be52390895ffefb6ad26ad94a40f9d85");
+            var msg = twilio.SendSmsMessage("+17732426982", "+1" + contact.Phone, "You will now receive MiParque texts about happenings in the park. Text STOP to this number to stop getting texts.");
         }
 
         protected override void Dispose(bool disposing)

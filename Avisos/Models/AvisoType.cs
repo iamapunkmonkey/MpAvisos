@@ -8,17 +8,23 @@ namespace Avisos.Models
 {
     public enum AvisoType
     {
-        [Display(Name = "User name")]
+        [Display(Name = "Deadline")]
         Deadline = 0,
 
-        [Display(Name = "User name")]
+        [Display(Name = "Construction")]
         Construction = 1,
 
-        [Display(Name = "User name")]   
+        [Display(Name = "Meeting")]   
         Meeting = 2,
 
-        [Display(Name = "User name")]
+        [Display(Name = "Event")]
         Event = 3,
+
+        [Display(Name = "Environmental")]
+        Environmental = 4,
+
+        [Display(Name = "Crime")]
+        Crime = 5,
     }
 
 

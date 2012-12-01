@@ -11,7 +11,7 @@ namespace Avisos.Models
         public int ContactID { get; set; }
 
         [Required(ErrorMessage="Telephone Number Required")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
+        [RegularExpression(@"^([0-9]{3})?([0-9]{3})([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public string Phone {get;set;} 
 
     }

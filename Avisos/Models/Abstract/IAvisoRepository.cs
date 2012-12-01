@@ -13,6 +13,7 @@ namespace Avisos.Models.Abstract
     {
         Aviso Get(int id);
         IQueryable<Aviso> GetAll();
+        IQueryable<Aviso> GetTop15();
         Aviso Add(Aviso aviso);
         Aviso Update(Aviso aviso);
         void Delete(int id);
