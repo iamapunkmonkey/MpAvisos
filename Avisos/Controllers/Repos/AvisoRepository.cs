@@ -78,5 +78,31 @@ namespace Avisos.Models.Repos
             throw new NotImplementedException();
         }
 
+
+
+        public Contact GetContact(int id)
+        {
+            return Context.Contacts.SingleOrDefault(r => r.ContactID == id);
+        }
+
+        public Contact Add(Contact contact)
+        {
+            Context.Contacts.Add(contact);
+            Context.SaveChanges();
+            return contact;
+        }
+
+        public Contact Update(Contact contact)
+        {
+            Context.Entry(contact).State = EntityState.Modified;
+            Context.SaveChanges();
+            return contact;
+        }
+
+        public void DeleteContact(int id)
+        {
+            var contact = GetContact(id);
+            Context.Contacts.Remove(contact);
+        }
     }
 }

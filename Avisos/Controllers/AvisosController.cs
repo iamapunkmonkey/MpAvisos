@@ -12,6 +12,7 @@ using Avisos.Models;
 using Avisos.Dal;
 using Avisos.Models.Abstract;
 using Twilio;
+using System.Text;
 
 namespace Avisos.Areas.API.Controllers
 {
@@ -45,6 +46,10 @@ namespace Avisos.Areas.API.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                //Clean the phone numbers
+                clean(contact.Phone);
+
                 var phones = unitOfWork.AvisoRepository.GetAllContacts().Select(c => c.Phone).Distinct();
 
                 if (!phones.Contains(contact.Phone))
@@ -69,6 +74,19 @@ namespace Avisos.Areas.API.Controllers
                 //Fail 400
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
+        }
+
+        public static string clean(string s)
+        {
+            StringBuilder sb = new StringBuilder(s);
+
+            sb.Replace("-", "");
+            sb.Replace("(", "");
+            sb.Replace(")", "");
+            sb.Replace(".", "");
+            sb.Replace(" ", "");
+
+            return sb.ToString();
         }
 
         private void SendWelcomeSMS(Contact contact)
