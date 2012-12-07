@@ -36,6 +36,7 @@ namespace Avisos.Models
 
         public DateTime Publish { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Created { get; set; }
 
         public bool SendSMS { get; set; }
