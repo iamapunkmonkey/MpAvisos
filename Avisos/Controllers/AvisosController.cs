@@ -48,7 +48,7 @@ namespace Avisos.Areas.API.Controllers
             {
 
                 //Clean the phone numbers
-                clean(contact.Phone);
+                contact.Phone = clean(contact.Phone);
 
                 var phones = unitOfWork.AvisoRepository.GetAllContacts().Select(c => c.Phone).Distinct();
 
