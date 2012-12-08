@@ -27,5 +27,13 @@ namespace Avisos
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader(
+                        "Access-Control-Allow-Origin", "*");    /* HttpContext.Current.Response.AddHeader(
+      "Access-Control-Allow-Origin", 
+      "http://AllowedDomain.com"); */
+        }
     }
 }
