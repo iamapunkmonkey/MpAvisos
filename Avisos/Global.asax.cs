@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebApiContrib.Formatting.Jsonp;
 
 namespace Avisos
 {
@@ -25,7 +26,8 @@ namespace Avisos
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+            var config = GlobalConfiguration.Configuration;
+            config.Formatters.Insert(0, new JsonpMediaTypeFormatter());
         }
 
     }
