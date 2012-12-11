@@ -105,13 +105,13 @@ h5, h6 {
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
+        
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        
     }
 
 header .content-wrapper {
@@ -133,12 +133,16 @@ footer {
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
     margin: 0;
+    background-image: none, url('http://miparque.org/wp-content/themes/miparque/images/logo.svg');
+    background-size: 80px;
+    background-repeat: no-repeat;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
-    background: none;
+    
     color: #c8c8c8;
     outline: none;
+    
     text-decoration: none;
 }
 
@@ -213,12 +217,12 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-color: #D28400;
+        background-image: -ms-linear-gradient(left, #D28400 0%, #D28400 100%);
+        background-image: -o-linear-gradient(left, #D28400 0%, #D28400 100%);
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #D28400), color-stop(1, #D28400));
+        background-image: -webkit-linear-gradient(left, #D28400 0%, #D28400 100%);
+        background-image: linear-gradient(left, #D28400 0%, #D28400 100%);
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
@@ -440,7 +444,7 @@ textarea {
 }
 
     input:focus, textarea:focus {
-        border: 1px solid #7ac0da;
+        border: 1px solid #D28400;
     }
 
     input[type="checkbox"] {
@@ -486,7 +490,7 @@ textarea {
 }
 
 .message-success {
-    color: #7ac0da;
+    color: #D28400;
     font-size: 1.3em;
     font-weight: bold;
     margin: 20px 0 10px 0;

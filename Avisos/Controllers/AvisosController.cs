@@ -29,15 +29,24 @@ namespace Avisos.Areas.API.Controllers
         }
 
         // GET api/Avisos/5
-        public Aviso GetAviso(int id)
+        public Aviso Go(string phone)
         {
-            Aviso aviso = unitOfWork.AvisoRepository.Get(id);
-            if (aviso == null)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
+            //Clean the phone numbers
+            var p = clean(phone.ToString());
+            Contact tempcontact = new Contact() { Phone = p };
 
-            return aviso;
+            CheckPhone(tempcontact);
+
+            var phones = unitOfWork.AvisoRepository.GetAllContacts().Select(c => c.Phone).Distinct();
+
+            if (!phones.Contains(p))
+            {
+                Contact con = unitOfWork.AvisoRepository.AddContact(new Contact() { Phone = p });
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, con);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = con.ContactID }));
+                SendWelcomeSMS(con);
+            }
+            return null;
         }
 
 
@@ -78,7 +87,7 @@ namespace Avisos.Areas.API.Controllers
         }
 
         // PUT api/Avisos/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id)
         {
             //Clean the phone numbers
             var phone = clean(id.ToString());

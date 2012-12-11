@@ -23,7 +23,7 @@ namespace Avisos.Controllers
 
         public ActionResult HowTo()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "A Few Helpful Tips.";
 
             return View();
         }

@@ -13,38 +13,4 @@
         </div>
     </section>
 }
-<h3>Past Avisos</h3>
-    <table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Avisos.First().Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Avisos.First().Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Avisos.First().Publish)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Avisos.First().Created)
-        </th>
-    </tr>
 
-@foreach (var item in Model.Avisos) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Publish)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Created)
-        </td>
-    </tr>
-}
-
-</table>

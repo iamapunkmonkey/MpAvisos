@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h1>Create</h1>
 
     <aside>
         <h4>Past Avisos</h4>
@@ -12,9 +12,6 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Avisos.First().Text)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Avisos.First().Publish)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Avisos.First().Created)
@@ -28,9 +25,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publish)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Created)
