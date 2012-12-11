@@ -22,9 +22,18 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("HowTo", "HowTo", "Home")</li>
-                            <li>@Html.ActionLink("Avisos", "Index", "Aviso")</li>
-                            <li>@Html.ActionLink("Contacts", "Index", "Contact")</li>
+                            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("HowTo", "HowTo", "Home")</li>
+                            }
+                            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Avisos", "Index", "Aviso")</li>
+                            }
+                            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Contacts", "Index", "Contact")</li>
+                            }
                         </ul>
                     </nav>
                 </div>
