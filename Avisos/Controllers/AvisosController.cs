@@ -13,6 +13,7 @@ using Avisos.Dal;
 using Avisos.Models.Abstract;
 using Twilio;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace Avisos.Areas.API.Controllers
 {
@@ -76,6 +77,35 @@ namespace Avisos.Areas.API.Controllers
             }
         }
 
+        // PUT api/Avisos/5
+        public void Put(int id, [FromBody]string value)
+        {
+            //Clean the phone numbers
+            var phone = clean(id.ToString());
+            Contact tempcontact = new Contact() { Phone = phone };
+
+            CheckPhone(tempcontact);
+                   
+            var phones = unitOfWork.AvisoRepository.GetAllContacts().Select(c => c.Phone).Distinct();
+
+            if (!phones.Contains(phone))
+            {
+                Contact con = unitOfWork.AvisoRepository.AddContact(new Contact() { Phone = phone });
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, con);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = con.ContactID }));
+                SendWelcomeSMS(con);
+            }
+        }
+
+        private void CheckPhone(Contact contact)
+        {
+            TestsHelper.ValidateObject(contact);
+            if (ModelState.IsValid)
+            {
+                int i = 1;
+            }
+        }
+
         public static string clean(string s)
         {
             StringBuilder sb = new StringBuilder(s);
@@ -99,6 +129,30 @@ namespace Avisos.Areas.API.Controllers
         {
             unitOfWork.Dispose();
             base.Dispose(disposing);
+        }
+    }
+
+    class TestsHelper
+    {
+
+        internal static void ValidateObject<T>(T obj)
+        {
+            var type = typeof(T);
+            var meta = type.GetCustomAttributes(false).OfType<MetadataTypeAttribute>().FirstOrDefault();
+            if (meta != null)
+            {
+                type = meta.MetadataClassType;
+            }
+            var propertyInfo = type.GetProperties();
+            foreach (var info in propertyInfo)
+            {
+                var attributes = info.GetCustomAttributes(false).OfType<ValidationAttribute>();
+                foreach (var attribute in attributes)
+                {
+                    var objPropInfo = obj.GetType().GetProperty(info.Name);
+                    attribute.Validate(objPropInfo.GetValue(obj, null), info.Name);
+                }
+            }
         }
     }
 }
