@@ -29,7 +29,7 @@ namespace Avisos.Areas.API.Controllers
         }
 
         // GET api/Avisos/5
-        public Aviso Go(string phone)
+        public Aviso GetAvisos(int phone)
         {
             //Clean the phone numbers
             var p = clean(phone.ToString());

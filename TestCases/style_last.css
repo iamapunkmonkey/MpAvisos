@@ -1,0 +1,7 @@
+#dropdown_teaserwrapper{ width: 100%; height: 100%; color: Gray;}
+#left_wrapper{width: 40%; height: 100%; float: left;}
+#image_wrapper img {}
+#image_wrapper{ width: 100%; height: 82%; background-color: red; }
+#image_caption{height: 18%; width: 100%; }
+#image_caption p{ margin: 0px; padding: 4px; text-align: right;}
+#right_wrapper { height: 100%; float: right;	width: 57%; padding: 0px 0px 0px 10px; }

@@ -1,0 +1,45 @@
+
+html
+{
+	color:red;
+}
+
+body {
+	color:red;
+}
+
+.aviso
+{
+	background: green;
+	height: 100px;
+	width: 200px;
+}
+
+.aviso .toprow
+{
+	background: yellow;
+}
+
+.aviso .toprow .icon
+{
+	background: yellow;
+	float: left;
+}
+
+.aviso .toprow .date
+{
+	background: blue;
+	float: left;
+}
+
+.aviso .bottomrow
+{
+	background: orange;
+}
+
+.aviso .bottomrow .text
+{
+	background: purple;
+	color:blue;
+}
+
